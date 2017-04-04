@@ -8,10 +8,11 @@ function gh() {
   fi
 
   giturl=${giturl/git\@github\.com\:/https://github.com/}
-  giturl=${giturl/\.git/\/tree}
-  branch="$(git symbolic-ref HEAD 2>/dev/null)" ||
-  branch="(unnamed branch)"     # detached HEAD
-  branch=${branch##refs/heads/}
-  giturl=$giturl/$branch
+  giturl=${giturl/\.git/}
+  # giturl=${giturl/\.git/\/tree}
+  # branch="$(git symbolic-ref HEAD 2>/dev/null)" ||
+  # branch="(unnamed branch)"     # detached HEAD
+  # branch=${branch##refs/heads/}
+  # giturl=$giturl/$branch
   open $giturl
 }
