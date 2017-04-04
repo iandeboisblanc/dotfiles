@@ -1,4 +1,8 @@
-for DOTFILE in `find /Users/iandeboisblanc/dotfiles`
+# DOTFILE_DIR
+DOTFILE_DIR='/Users/iandeboisblanc/dotfiles'
+
+# Source the dotfiles (order matters)
+for DOTFILE in `find $DOTFILE_DIR/source`
 do
-  [ -f “$DOTFILE” ] && source “$DOTFILE”
+  [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
